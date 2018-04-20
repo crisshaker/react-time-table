@@ -1,0 +1,277 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  min-width: 1200px;
+}
+
+body {
+  min-height: 1999px;
+}
+
+header, .main-menu {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-right: auto;
+  font-family: "Aller";
+  font-size: 24px;
+  color: #848484;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.main-menu button {
+  position: relative;
+  border: none;
+  font-family: "Aller";
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12px 32px 12px 12px;
+  border-radius: 4px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.main-menu button::after {
+  display: block;
+  position: absolute;
+  width: 10px;
+  top: 12px;
+  right: 12px;
+  content: url("../img/add.svg");
+}
+
+.main-menu li:nth-child(1) button {
+  background: linear-gradient(180deg, #0dacd4, #0b8eae);
+}
+
+.main-menu li:nth-child(2) button {
+  background: linear-gradient(180deg, #6bcb1d, #57a518);
+}
+
+.main-content {
+  margin-top: 81px;
+  position: relative;
+}
+
+
+.table, .side-pane {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.side-pane {
+  width: 12%;
+  background: #fff;
+  padding: 0px;
+  position: fixed;
+  left: 0;
+  top: 81px;
+}
+
+.courses {
+  background: #e8e8e8;
+  padding: 20px;
+  max-height: 75vh;
+  overflow-y: scroll;
+  padding-right: 12px;
+  padding-bottom: 20px;
+}
+
+.courses li > div {
+  font-family: "Aller";
+  font-size: 14px;
+  text-align: center;
+  background: #509abc;
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.bin {
+  padding: 32px;
+  background: #fff;
+  text-align: center;
+}
+
+.bin img {
+  width: 30px;
+}
+
+.table {
+  width: 88%;
+  margin-left: 12%;
+  padding: 24px;
+}
+
+.table h2 {
+  text-align: center;
+  font-family: "Aller Light";
+  font-size: 32px;
+  font-weight: 300;
+  color: #848484;
+  margin-bottom: 32px;
+}
+
+table {
+  border-collapse: collapse;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Aller";
+  font-size: 14px;
+  color: #6e6e6e;
+  table-layout: fixed;
+}
+
+table, tr, td {
+  border: 1px solid #a7a7a7;
+}
+
+table tr, table tbody {
+  width: 100%;
+}
+
+table td {
+  padding: 12px;
+  /* height: 70px; */
+  /* max-width: 5%;
+  min-width: 5%; */
+}
+
+table td:first-child {
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-course > div {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 10px 1px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #fff;
+  background: #ac24c5;
+}
+
+.modal {
+  display: none;
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .6);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal form {
+  position: relative;
+  background: #f7f7f7;
+  width: 700px;
+  margin: 100px auto;
+  padding: 62px 48px 42px;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  color: #9f9f9f;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.form-group input {
+  font-family: "Aller";
+  font-size: 16px;
+  color: #9f9f9f;
+  background: #fefef7;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  padding: 12px;
+  width: 100%;
+}
+
+.side-inputs {
+  display: flex;
+}
+
+.side-inputs > div {
+  flex-grow: 1;
+}
+
+.side-inputs > div:first-child {
+  margin-right: 24px;
+}
+
+.modal button[type="submit"] {
+  display: block;
+  margin: 32px auto 8px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 16px 48px;
+  border: none;
+  cursor: pointer;
+  font-family: "Aller";
+  font-size: 16px;
+}
+
+.add-course [type="submit"] {
+  background: linear-gradient(180deg, #19a6e1, #1488b8);
+}
+
+.modal .close::after {
+  top: 12px;
+  right: 12px;
+  position: absolute;
+  content: url("../img/close.svg");
+  width: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
