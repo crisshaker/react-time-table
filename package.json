@@ -1,0 +1,25 @@
+{
+  "name": "smart-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js --ignore client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisshaker/react-time-table.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisshaker/react-time-table/issues"
+  },
+  "homepage": "https://github.com/crisshaker/react-time-table#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17"
+  }
+}

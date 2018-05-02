@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { DragSource } from "react-dnd";
 
 const courseSource = {
-  beginDrag(props) {
-    console.log(props.course);
-    return props.course;
+  beginDrag({ course }) {
+    return course;
   }
 };
 

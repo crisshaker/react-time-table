@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { DropTarget } from "react-dnd";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 import Course from "./Course";
 
 const courseTarget = {
-  drop(props, monitor) {
-    console.log(monitor.getItem());
+  drop({ time, venue, course, moveCourseToCell }, monitor) {
+    const droppedCourse = monitor.getItem();
+    moveCourseToCell({ course: droppedCourse, target: { time, venue } });
+  },
+  canDrop({ course }, monitor) {
+    return !course;
   }
 };
 
@@ -30,4 +36,6 @@ class TableCell extends Component {
   }
 }
 
-export default DropTarget("course", courseTarget, collect)(TableCell);
+export default connect(null, actions)(
+  DropTarget("course", courseTarget, collect)(TableCell)
+);

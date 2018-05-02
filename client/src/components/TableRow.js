@@ -25,13 +25,15 @@ class TableRow extends Component {
       "1830"
     ];
 
-    const { courses } = this.props;
+    const { courses, venue } = this.props;
 
     return TIMES.map(time => {
       const course = courses.find(course => course.period.time === time);
       return (
         <TableCell
+          time={time}
           course={course}
+          venue={venue}
           key={Date.now() * Math.random() * Math.random()}
         />
       );
