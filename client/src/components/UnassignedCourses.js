@@ -28,7 +28,7 @@ class UnassignedCourses extends Component {
     const { courses } = this.props;
 
     return courses.filter(course => course.period === null).map(course => (
-      <li key={course.id}>
+      <li key={course._id}>
         <Course course={course} />
       </li>
     ));

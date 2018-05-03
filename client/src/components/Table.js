@@ -12,7 +12,7 @@ class Table extends Component {
   renderTableRows() {
     const { venues } = this.props;
 
-    return venues.map(venue => <TableRow venue={venue} key={venue.name} />);
+    return venues.map(venue => <TableRow venue={venue} key={venue._id} />);
   }
 
   render() {

@@ -5,9 +5,12 @@ import * as actions from "../actions";
 import Course from "./Course";
 
 const courseTarget = {
-  drop({ time, venue, course, moveCourseToCell }, monitor) {
+  drop({ time, venue, moveCourseToCell }, monitor) {
     const droppedCourse = monitor.getItem();
-    moveCourseToCell({ course: droppedCourse, target: { time, venue } });
+    moveCourseToCell({
+      course: droppedCourse,
+      target: { time, venue: venue._id }
+    });
   },
   canDrop({ course }, monitor) {
     return !course;

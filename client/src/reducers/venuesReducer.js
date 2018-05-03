@@ -1,13 +1,10 @@
-const INITIAL_STATE = [
-  {
-    name: "JQB11"
-  },
-  {
-    name: "JQB23"
-  },
-  {
-    name: "NNB2"
-  }
-];
+import * as ActionTypes from "../actions/types";
 
-export default (state = INITIAL_STATE, action) => INITIAL_STATE;
+export default (state = [], { type, payload }) => {
+  switch (type) {
+    case ActionTypes.FETCH_VENUES:
+      return payload;
+    default:
+      return state;
+  }
+};

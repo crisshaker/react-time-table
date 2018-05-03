@@ -3,7 +3,7 @@ import { DragSource } from "react-dnd";
 
 const courseSource = {
   beginDrag({ course }) {
-    return course;
+    return { id: course._id };
   }
 };
 

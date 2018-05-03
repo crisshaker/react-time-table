@@ -56,7 +56,7 @@ const mapStateToProps = ({ courses }, ownProps) => {
   return {
     courses: courses.filter(
       course =>
-        course.period !== null && course.period.venue === ownProps.venue.name
+        course.period !== null && course.period.venue === ownProps.venue._id
     )
   };
 };

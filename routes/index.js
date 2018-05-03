@@ -86,6 +86,16 @@ const updateCourse = async (req, res) => {
   }
 };
 
+const makeCourseUnassigned = async (req, res) => {
+  try {
+    req.course.period = null;
+    const updatedCourse = await req.course.save();
+    res.send(updatedCourse);
+  } catch (error) {
+    return res.status(error.status || 401).send(error.message);
+  }
+};
+
 const removeCourse = async (req, res) => {
   try {
     await req.course.remove();
@@ -100,6 +110,7 @@ module.exports = app => {
   app.get("/course", getCourses);
   app.post("/course", createCourse);
   app.put("/course/:courseId", updateCourse);
+  app.get("/course/:courseId/unassign", makeCourseUnassigned);
   app.delete("/course/:courseId", removeCourse);
   app.get("/venue", getVenues);
   app.post("/venue", createVenue);
